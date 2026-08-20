@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fits — Got Fits?</title>
 <meta name="description" content="Tarzını yansıt, kombinlerini paylaş ve ilham al. Moda dünyan artık cebinde.">
+<link rel="icon" type="image/png" href="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86">
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -77,24 +78,17 @@
     opacity: 0.9;
   }
 
-  /* "Fits" logo lockup — Pacifico script + animated brand shine */
+  /* "fits" logo lockup — Pacifico script, brand-yellow liquid fill tied to scroll */
   .fits-logo-text {
     font-family: 'Pacifico', cursive;
     font-weight: 400;
     display: inline-block;
+    position: relative;
     line-height: 1;
+    color: #17121F;
     opacity: 0;
-    background: linear-gradient(100deg, #17121F 35%, #FFDE59 50%, #17121F 65%);
-    background-size: 250% 100%;
-    background-position: 200% 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
     transform-origin: left bottom;
-    animation:
-      fitsPop .9s cubic-bezier(.34,1.56,.64,1) .55s forwards,
-      fitsShine 4s ease-in-out 1.6s infinite;
+    animation: fitsPop .9s cubic-bezier(.34,1.56,.64,1) .55s forwards;
   }
   @keyframes fitsPop {
     0%   { opacity: 0; transform: scale(.6) rotate(-14deg); }
@@ -102,17 +96,31 @@
     75%  { transform: scale(.96) rotate(-4deg); }
     100% { opacity: 1; transform: scale(1) rotate(-2deg); }
   }
-  @keyframes fitsShine {
-    0%, 100% { background-position: 200% 0; }
-    50% { background-position: -200% 0; }
+  /* Duplicate text layer, filled with brand yellow from the bottom up.
+     Its height is driven purely by scroll position via --liquid-fill (set in JS) —
+     no idle/looping animation, it only moves when the user scrolls. */
+  .fits-liquid {
+    position: absolute;
+    inset: 0;
+    color: transparent;
+    background-image: linear-gradient(#FFDE59 0 88%, rgba(255,255,255,.65) 92%, #FFDE59 96% 100%);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% var(--liquid-fill, 0%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-size .12s linear;
+    pointer-events: none;
+    user-select: none;
   }
   @media (prefers-reduced-motion: reduce) {
     .fits-logo-text {
       opacity: 1;
       animation: none;
-      background-position: -50% 0;
       transform: rotate(-2deg);
     }
+    .fits-liquid { transition: none; }
   }
 </style>
 </head>
@@ -151,7 +159,7 @@
       <h1 class="fade-up delay-1 text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight text-ink">
         Got<br class="hidden md:block">
         <span class="relative inline-flex items-baseline gap-1">
-          <span class="fits-logo-text text-7xl sm:text-8xl lg:text-9xl">Fits</span><span class="font-sans">?</span>
+          <span class="fits-logo-text text-7xl sm:text-8xl lg:text-9xl">fits<span class="fits-liquid" aria-hidden="true">fits</span></span><span class="font-sans">?</span>
         </span>
       </h1>
 
@@ -188,9 +196,8 @@
 
         <div class="relative w-[280px] sm:w-[320px] h-[580px] sm:h-[650px] bg-ink rounded-[3rem] p-3 shadow-phone">
           <div class="w-full h-full bg-bg rounded-[2.3rem] overflow-hidden relative">
-            <!-- Ekran görüntüsü: asset geldiğinde bu img'in src'sini değiştirmen yeterli -->
-            <img id="phone-screenshot" src="https://placehold.co/320x650/FFDE59/17121F?text=Fits+App"
-                 alt="Fits uygulama arayüzü" class="w-full h-full object-cover">
+            <img id="phone-screenshot" src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2FIMG_4795.png?alt=media&token=384eeaab-770d-4750-b14b-d1bf662a43f3"
+                 alt="Fits uygulama arayüzü" class="w-full h-full object-cover object-top">
             <!-- Dynamic Island -->
             <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-24 h-6 sm:w-28 sm:h-7 bg-ink rounded-full z-20 flex items-center justify-end pr-2">
               <span class="w-1.5 h-1.5 rounded-full bg-white/15"></span>
@@ -327,6 +334,38 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // "fits" logo — brand-yellow liquid fill driven purely by the user's own scroll
+  // (mouse wheel or touch swipe). No idle/looping animation: it only moves when scrolled,
+  // and settles back down when the user scrolls back up.
+  (function () {
+    var liquidEls = document.querySelectorAll('.fits-liquid');
+    if (!liquidEls.length) return;
+
+    var FILL_RANGE = 480; // px scrolled to go from empty to fully filled
+    var ticking = false;
+
+    function update() {
+      var progress = Math.max(0, Math.min(1, window.scrollY / FILL_RANGE));
+      var pct = (progress * 100).toFixed(1) + '%';
+      liquidEls.forEach(function (el) {
+        el.style.setProperty('--liquid-fill', pct);
+      });
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  })();
+</script>
 
 </body>
 </html>
