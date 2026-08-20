@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Fits</title>
+<meta name="description" content="Fits mobil uygulaması Gizlilik Politikası: toplanan veriler, izinler, veri güvenliği, üçüncü taraf paylaşımı, kullanıcı hakları ve hesap silme prosedürü.">
+
+<!-- Tailwind CSS + Typography plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Google Fonts: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#FFDE59',
+          bg: '#FDFBF7',
+          ink: '#17121F',
+          muted: '#6F6B7A',
+        },
+        fontFamily: {
+          sans: ['Poppins', 'sans-serif'],
+        },
+        boxShadow: {
+          soft: '0 20px 60px -15px rgba(23, 18, 31, 0.15)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FDFBF7; }
+</style>
+</head>
+<body class="font-sans text-ink antialiased">
+
+<!-- ================= NAVBAR ================= -->
+<header class="sticky top-0 z-50 bg-bg/80 backdrop-blur-md border-b border-ink/5">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center">
+      <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
+           alt="Fits Logo" class="h-9 w-auto object-contain">
+    </a>
+    <nav class="flex items-center gap-8">
+      <a href="/index.html" class="text-sm font-medium text-ink hover:text-ink/60 transition-colors flex items-center gap-2">
+        <i class="fa-solid fa-arrow-left text-xs"></i>
+        Ana Sayfa
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HEADER ================= -->
+<section class="pt-16 pb-10 md:pt-20 md:pb-14">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10">
+    <span class="inline-flex items-center gap-2 bg-brand/20 border border-brand/40 text-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+      <i class="fa-solid fa-shield-halved text-[11px]"></i>
+      Yasal Belge
+    </span>
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-ink">Gizlilik Politikası</h1>
+    <p class="mt-4 text-muted">Yürürlük Tarihi: 20 Ağustos 2026 &middot; Son Güncelleme: 20 Ağustos 2026</p>
+    <p class="mt-6 text-lg text-muted leading-relaxed">
+      Bu Gizlilik Politikası, Fits mobil uygulamasını ("Fits", "Uygulama", "Platform", "biz") kullanan tüm kullanıcıların
+      ("siz", "kullanıcı") kişisel verilerinin nasıl toplandığını, işlendiğini, saklandığını ve korunduğunu açıklamak
+      amacıyla hazırlanmıştır. Uygulamayı indirerek, hesap oluşturarak veya kullanarak bu politikada açıklanan
+      uygulamaları kabul etmiş sayılırsınız.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="pb-24 md:pb-32">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10">
+    <div class="prose prose-lg max-w-none
+                prose-headings:font-sans prose-headings:font-bold prose-headings:text-ink prose-headings:tracking-tight
+                prose-h2:text-2xl prose-h2:mt-14 prose-h2:mb-4 prose-h2:pt-6 prose-h2:border-t prose-h2:border-ink/10
+                prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3
+                prose-p:text-muted prose-p:leading-relaxed
+                prose-li:text-muted prose-li:leading-relaxed
+                prose-strong:text-ink prose-strong:font-semibold
+                prose-a:text-ink prose-a:font-semibold prose-a:underline prose-a:decoration-brand prose-a:decoration-2 prose-a:underline-offset-2 hover:prose-a:text-ink/70">
+
+      <h2 id="veri-sorumlusu">1. Veri Sorumlusu</h2>
+      <p>
+        İşbu Gizlilik Politikası kapsamında kişisel verileriniz, veri sorumlusu sıfatıyla <strong>Fits</strong> platformu
+        tarafından, yürürlükteki kişisel verilerin korunması mevzuatına (6698 sayılı Kişisel Verilerin Korunması Kanunu
+        ve ilgili Avrupa Birliği Genel Veri Koruma Tüzüğü — GDPR dâhil olmak üzere) uygun şekilde işlenmektedir.
+        Gizlilik ile ilgili her türlü soru, talep ve başvurunuz için bizimle aşağıdaki kanaldan iletişime geçebilirsiniz:
+      </p>
+      <ul>
+        <li>E-posta: <a href="mailto:hello@gotfits.com">hello@gotfits.com</a></li>
+      </ul>
+
+      <h2 id="toplanan-veriler">2. Toplanan Kişisel Veriler</h2>
+      <p>Uygulamayı kullanırken aşağıdaki kategorilerde kişisel veriler toplanmaktadır:</p>
+
+      <h3>2.1. Hesap Oluşturma Verileri</h3>
+      <ul>
+        <li>E-posta adresi</li>
+        <li>Kullanıcı adı ve profil bilgileri (opsiyonel profil fotoğrafı, biyografi)</li>
+        <li>Kimlik doğrulama bilgileri (şifre yerine güvenli kimlik doğrulama sağlayıcıları üzerinden şifrelenmiş oturum belirteçleri)</li>
+      </ul>
+
+      <h3>2.2. Kullanıcı Tarafından Yüklenen İçerikler</h3>
+      <ul>
+        <li>Kombin/kıyafet fotoğrafları</li>
+        <li>İçerikle ilişkilendirilen ürün marka ve fiyat etiketleri</li>
+        <li>Diğer kullanıcıların içeriklerine verdiğiniz oylamalar (alev/beğeni, dislike) ve yorumlar</li>
+      </ul>
+
+      <h3>2.3. Teknik ve Cihaz Verileri</h3>
+      <ul>
+        <li>Cihaz modeli ve donanım bilgileri</li>
+        <li>İşletim sistemi türü ve sürümü</li>
+        <li>IP adresi ve yaklaşık konum bilgisi (ülke/şehir düzeyinde)</li>
+        <li>Firebase Cloud Messaging (FCM) push bildirim belirteci</li>
+        <li>Uygulama kullanım ve etkileşim verileri (çökme raporları, oturum süresi gibi anonimleştirilmiş analitik veriler)</li>
+      </ul>
+
+      <h2 id="kamera-galeri">3. Kamera ve Fotoğraf Galerisi İzinleri</h2>
+      <p>
+        Fits, kombin fotoğraflarınızı paylaşabilmeniz için cihazınızın kamera ve/veya fotoğraf galerisine erişim izni
+        talep eder. Bu erişim <strong>yalnızca ve yalnızca sizin açık rızanız ve doğrudan işleminiz</strong> ile
+        (örneğin "Fotoğraf Yükle" veya "Fotoğraf Çek" butonuna bastığınızda) devreye girer.
+      </p>
+      <ul>
+        <li>Uygulama, arka planda kullanıcının bilgisi ve rızası olmadan galeriyi taramaz, otomatik fotoğraf yüklemesi
+          yapmaz veya galerinizdeki içerikleri sunucularımıza aktarmaz.</li>
+        <li>Kamera/galeri izni yalnızca aktif olarak bir kombin paylaşımı yapmak istediğinizde sistem tarafından
+          talep edilir ve izin vermemeniz durumunda ilgili paylaşım özelliği dışındaki tüm uygulama işlevleri
+          normal şekilde çalışmaya devam eder.</li>
+        <li>İzni istediğiniz zaman cihazınızın Ayarlar menüsünden geri alabilirsiniz.</li>
+      </ul>
+
+      <h2 id="veri-guvenligi">4. Veri Güvenliği ve Altyapı</h2>
+      <p>
+        Kişisel verileriniz ve içerikleriniz, Google LLC tarafından işletilen <strong>Firebase</strong> altyapısında
+        (Cloud Firestore, Firebase Storage, Firebase Authentication) barındırılmaktadır. Bu altyapı, endüstri standardı
+        güvenlik önlemleri ile korunmaktadır:
+      </p>
+      <ul>
+        <li>Verilerin hem aktarım sırasında (in-transit, TLS/SSL şifreleme) hem de sunucularda saklanırken
+          (at-rest, AES-256 şifreleme) şifrelenmesi,</li>
+        <li>Firestore Security Rules ve Firebase Authentication ile katmanlı erişim kontrolü,</li>
+        <li>Yetkisiz erişime karşı sürekli izlenen, ISO/IEC 27001 ve SOC 2/3 gibi uluslararası güvenlik
+          sertifikalarına sahip bir bulut altyapısı.</li>
+      </ul>
+      <p>
+        Makul teknik ve idari tüm tedbirlere rağmen internet üzerinden hiçbir veri iletiminin veya elektronik
+        saklama yönteminin %100 güvenli olamayacağını hatırlatmak isteriz.
+      </p>
+
+      <h2 id="ucuncu-taraf">5. Üçüncü Taraflarla Paylaşım</h2>
+      <p>
+        Fits, kişisel verilerinizi <strong>hiçbir koşulda</strong> üçüncü taraflara satmaz, kiralamaz veya
+        pazarlama/reklam amacıyla paylaşmaz. Verileriniz yalnızca aşağıdaki sınırlı durumlarda paylaşılabilir:
+      </p>
+      <ul>
+        <li>Uygulamanın çalışması için zorunlu altyapı sağlayıcıları ile (yalnızca Firebase/Google Cloud —
+          barındırma ve push bildirim hizmeti amacıyla),</li>
+        <li>Yasal bir yükümlülüğün, mahkeme kararının veya yetkili resmi makamın talebinin yerine getirilmesi
+          amacıyla,</li>
+        <li>Platform kurallarının ihlali durumunda dolandırıcılık, kötüye kullanım veya güvenlik tehdidinin
+          önlenmesi amacıyla, yalnızca gerekli ölçüde.</li>
+      </ul>
+
+      <h2 id="kullanici-haklari">6. Kullanıcı Hakları ve Hesap Silme</h2>
+      <p>
+        Kişisel Verilerin Korunması Kanunu ve GDPR kapsamında; verilerinize erişme, düzeltme, işlenmesine itiraz
+        etme, taşınabilirliğini talep etme ve verilerinizin silinmesini isteme hakkına sahipsiniz. Apple App Store
+        yönergeleri uyarınca, hesabınızı ve tüm ilişkili verilerinizi <strong>uygulama içinden, herhangi bir dış
+        kanala yönlendirilmeden</strong> kalıcı olarak silebilirsiniz:
+      </p>
+      <ul>
+        <li><strong>Profil → Ayarlar → Hesabı Sil</strong> adımlarını izleyerek hesabınızı anında ve kalıcı olarak
+          silebilirsiniz.</li>
+        <li>Hesap silme işlemi; yüklediğiniz tüm fotoğrafları, oylarınızı/yorumlarınızı, profil bilgilerinizi ve
+          hesabınızla ilişkili diğer tüm kişisel verileri sunucularımızdan kalıcı olarak kaldırır. Bu işlem geri
+          alınamaz.</li>
+        <li>Uygulama içinden hesap silme işlemini gerçekleştiremiyorsanız, aynı talebi
+          <a href="mailto:hello@gotfits.com">hello@gotfits.com</a> adresine e-posta göndererek de iletebilirsiniz;
+          talebiniz makul süre içinde (en geç 30 gün) yerine getirilir.</li>
+      </ul>
+
+      <h2 id="yas-siniri">7. Yaş Sınırı</h2>
+      <p>
+        Fits, 13 yaşından küçük bireylere (bulunduğunuz ülke mevzuatının daha yüksek bir yaş sınırı öngörmesi
+        halinde — örneğin bazı Avrupa Birliği ülkelerinde 16 yaş — bu yaşın altındaki bireylere) yönelik değildir
+        ve bilerek bu yaş grubundan kişisel veri toplamaz. Bu yaş sınırının altında olduğunu tespit ettiğimiz
+        kullanıcıların hesapları ve ilişkili verileri derhâl silinir. Bir çocuğun bize kişisel veri sağladığını
+        düşünüyorsanız lütfen <a href="mailto:hello@gotfits.com">hello@gotfits.com</a> üzerinden bizimle iletişime
+        geçin.
+      </p>
+
+      <h2 id="degisiklikler">8. Politikada Yapılacak Değişiklikler</h2>
+      <p>
+        Bu Gizlilik Politikası, yasal düzenlemeler veya uygulama özelliklerindeki değişiklikler doğrultusunda
+        güncellenebilir. Önemli değişiklikler uygulama içi bildirim veya e-posta yoluyla duyurulacaktır. Politikanın
+        güncel hâli her zaman bu sayfada yayımlanır.
+      </p>
+
+      <h2 id="iletisim">9. İletişim</h2>
+      <p>
+        Gizliliğinizle ilgili her türlü soru, talep veya şikâyetiniz için bize
+        <a href="mailto:hello@gotfits.com">hello@gotfits.com</a> adresinden ulaşabilirsiniz.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-ink text-white/80">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10 py-16">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+
+      <div>
+        <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
+             alt="Fits Logo" class="h-7 w-auto object-contain mb-4 brightness-0 invert">
+        <p class="text-sm text-white/50 max-w-xs leading-relaxed">
+          Sokak modasına ve tarzına ilham veren, gençlerin kombin paylaştığı topluluk platformu.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-8 sm:gap-16">
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
+            <li><a href="/terms.html" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="mailto:hello@gotfits.com" class="hover:text-brand transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-brand"></i>
+                hello@gotfits.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
+      <div class="flex items-center gap-5 text-white/50">
+        <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
