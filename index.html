@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fits — Got Fits?</title>
+<meta name="description" content="Tarzını yansıt, kombinlerini paylaş ve ilham al. Moda dünyan artık cebinde.">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Google Fonts: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#FFDE59',
+          bg: '#FDFBF7',
+          ink: '#17121F',
+          muted: '#6F6B7A',
+        },
+        fontFamily: {
+          sans: ['Poppins', 'sans-serif'],
+        },
+        boxShadow: {
+          soft: '0 20px 60px -15px rgba(23, 18, 31, 0.15)',
+          phone: '0 40px 80px -20px rgba(23, 18, 31, 0.35)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #FDFBF7; }
+
+  .fade-up {
+    animation: fadeUp 0.9s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .delay-1 { animation-delay: .1s; }
+  .delay-2 { animation-delay: .25s; }
+  .delay-3 { animation-delay: .4s; }
+  .delay-4 { animation-delay: .55s; }
+
+  .blob {
+    background: radial-gradient(circle at 30% 30%, rgba(255,222,89,0.55), rgba(255,222,89,0) 70%);
+  }
+
+  .feature-card {
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -20px rgba(23,18,31,0.18);
+    border-color: #FFDE59;
+  }
+
+  .store-btn {
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  .store-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body class="font-sans text-ink antialiased overflow-x-hidden">
+
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-ink/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center">
+      <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
+           alt="Fits Logo" class="h-9 w-auto object-contain">
+    </a>
+    <nav class="flex items-center gap-8">
+      <a href="#iletisim" class="text-sm font-medium text-ink hover:text-ink/60 transition-colors">
+        İletişim
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="relative pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden">
+  <!-- Decorative blob -->
+  <div class="blob absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"></div>
+  <div class="blob absolute top-1/2 -left-52 w-[500px] h-[500px] rounded-full pointer-events-none opacity-70"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 md:gap-10 items-center">
+
+    <!-- Left: Copy -->
+    <div class="text-center md:text-left">
+      <div class="fade-up inline-flex items-center gap-2 bg-brand/20 border border-brand/40 text-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+        <i class="fa-solid fa-sparkles text-[11px]"></i>
+        Yeni Nesil Moda Deneyimi
+      </div>
+
+      <h1 class="fade-up delay-1 text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight text-ink">
+        Got<br class="hidden md:block">
+        <span class="relative inline-block">
+          Fits?
+          <svg class="absolute -bottom-2 left-0 w-full" height="18" viewBox="0 0 200 18" preserveAspectRatio="none">
+            <path d="M2 14 Q 50 2, 100 10 T 198 6" stroke="#FFDE59" stroke-width="10" fill="none" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h1>
+
+      <p class="fade-up delay-2 mt-8 text-lg md:text-xl text-muted max-w-md mx-auto md:mx-0 leading-relaxed">
+        Tarzını yansıt, kombinlerini paylaş ve ilham al. Moda dünyan artık cebinde.
+      </p>
+
+      <!-- Store buttons -->
+      <div class="fade-up delay-3 mt-10 flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4">
+        <a href="#" class="store-btn flex items-center gap-3 bg-ink text-white px-6 py-3 rounded-2xl min-w-[190px] shadow-soft">
+          <i class="fa-brands fa-apple text-3xl"></i>
+          <span class="text-left leading-tight">
+            <span class="block text-[11px] text-white/70">İndir</span>
+            <span class="block text-lg font-semibold -mt-0.5">App Store</span>
+          </span>
+        </a>
+        <a href="#" class="store-btn flex items-center gap-3 bg-ink text-white px-6 py-3 rounded-2xl min-w-[190px] shadow-soft">
+          <i class="fa-brands fa-google-play text-2xl"></i>
+          <span class="text-left leading-tight">
+            <span class="block text-[11px] text-white/70">İndir</span>
+            <span class="block text-lg font-semibold -mt-0.5">Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Phone mockup -->
+    <div class="fade-up delay-4 flex justify-center md:justify-end">
+      <div class="relative">
+        <!-- glow behind phone -->
+        <div class="absolute inset-0 bg-brand/30 blur-3xl rounded-full scale-90"></div>
+
+        <div class="relative w-[280px] sm:w-[320px] h-[580px] sm:h-[650px] bg-ink rounded-[3rem] p-3 shadow-phone">
+          <!-- Notch -->
+          <div class="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-6 bg-ink rounded-full z-10"></div>
+          <div class="w-full h-full bg-bg rounded-[2.3rem] overflow-hidden relative">
+            <img src="https://placehold.co/320x650/FFDE59/17121F?text=Fits+App"
+                 alt="Fits uygulama arayüzü" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="py-24 md:py-32 bg-white/60">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+      <span class="text-sm font-semibold text-ink/50 uppercase tracking-widest">Özellikler</span>
+      <h2 class="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-ink">Neden Fits?</h2>
+      <p class="mt-5 text-lg text-muted">
+        Kombinlerini keşfet, paylaş ve topluluğun beğenisini kazan — hepsi tek uygulamada.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+
+      <!-- Feature 1 -->
+      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 lg:p-10 text-center md:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6 mx-auto md:mx-0">
+          <i class="fa-solid fa-shirt text-ink text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-ink mb-3">Kombinlerini Paylaş</h3>
+        <p class="text-muted leading-relaxed">
+          Günlük stilini fotoğrafla, topluluğa sun ve kendi tarzını sergilediğin bir profil oluştur.
+        </p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 lg:p-10 text-center md:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6 mx-auto md:mx-0">
+          <i class="fa-solid fa-fire text-ink text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-ink mb-3">Topluluğu Oyla</h3>
+        <p class="text-muted leading-relaxed">
+          Beğendiğin kombinlere ateş ver, tarzını bulamadıklarına dislike bas. Kararı topluluk versin.
+        </p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 lg:p-10 text-center md:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6 mx-auto md:mx-0">
+          <i class="fa-solid fa-compass text-ink text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-ink mb-3">Keşfet ve İlham Al</h3>
+        <p class="text-muted leading-relaxed">
+          Sokak modasının nabzını tut, akım kombinleri keşfet ve kendi stilin için ilham topla.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA STRIP ================= -->
+<section class="py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-6 lg:px-10 text-center">
+    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-ink leading-tight">
+      Tarzını göstermeye hazır mısın?
+    </h2>
+    <p class="mt-5 text-lg text-muted max-w-xl mx-auto">
+      Fits'i hemen indir, kombinini paylaş ve moda dünyasının bir parçası ol.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#" class="store-btn flex items-center gap-3 bg-ink text-white px-6 py-3 rounded-2xl min-w-[190px] shadow-soft">
+        <i class="fa-brands fa-apple text-3xl"></i>
+        <span class="text-left leading-tight">
+          <span class="block text-[11px] text-white/70">İndir</span>
+          <span class="block text-lg font-semibold -mt-0.5">App Store</span>
+        </span>
+      </a>
+      <a href="#" class="store-btn flex items-center gap-3 bg-ink text-white px-6 py-3 rounded-2xl min-w-[190px] shadow-soft">
+        <i class="fa-brands fa-google-play text-2xl"></i>
+        <span class="text-left leading-tight">
+          <span class="block text-[11px] text-white/70">İndir</span>
+          <span class="block text-lg font-semibold -mt-0.5">Google Play</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="iletisim" class="bg-ink text-white/80">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+
+      <div>
+        <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
+             alt="Fits Logo" class="h-7 w-auto object-contain mb-4 brightness-0 invert">
+        <p class="text-sm text-white/50 max-w-xs leading-relaxed">
+          Sokak modasına ve tarzına ilham veren, gençlerin kombin paylaştığı topluluk platformu.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-8 sm:gap-16">
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
+            <li><a href="#" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="mailto:hello@gotfits.com" class="hover:text-brand transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-brand"></i>
+                hello@gotfits.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
+      <div class="flex items-center gap-5 text-white/50">
+        <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
