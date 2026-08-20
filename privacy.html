@@ -42,6 +42,7 @@
 <style>
   html { scroll-behavior: smooth; }
   body { background-color: #FDFBF7; }
+  .lang-btn { transition: background-color .2s ease, color .2s ease; }
 </style>
 </head>
 <body class="font-sans text-ink antialiased">
@@ -53,11 +54,15 @@
       <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
            alt="Fits Logo" class="h-9 w-auto object-contain">
     </a>
-    <nav class="flex items-center gap-8">
+    <nav class="flex items-center gap-4 sm:gap-8">
       <a href="/index.html" class="text-sm font-medium text-ink hover:text-ink/60 transition-colors flex items-center gap-2">
         <i class="fa-solid fa-arrow-left text-xs"></i>
-        Ana Sayfa
+        <span data-i18n="nav.home">Ana Sayfa</span>
       </a>
+      <div class="flex items-center gap-0.5 border border-ink/15 rounded-full p-0.5">
+        <button type="button" data-lang-btn="tr" class="lang-btn px-2.5 py-1 rounded-full text-xs font-semibold">TR</button>
+        <button type="button" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-full text-xs font-semibold">EN</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -67,11 +72,11 @@
   <div class="max-w-3xl mx-auto px-6 lg:px-10">
     <span class="inline-flex items-center gap-2 bg-brand/20 border border-brand/40 text-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
       <i class="fa-solid fa-shield-halved text-[11px]"></i>
-      Yasal Belge
+      <span data-i18n="badge">Yasal Belge</span>
     </span>
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-ink">Gizlilik Politikası</h1>
-    <p class="mt-4 text-muted">Yürürlük Tarihi: 20 Ağustos 2026 &middot; Son Güncelleme: 20 Ağustos 2026</p>
-    <p class="mt-6 text-lg text-muted leading-relaxed">
+    <h1 data-i18n="h1" class="text-4xl md:text-5xl font-extrabold tracking-tight text-ink">Gizlilik Politikası</h1>
+    <p data-i18n="dates" class="mt-4 text-muted">Yürürlük Tarihi: 20 Ağustos 2026 &middot; Son Güncelleme: 20 Ağustos 2026</p>
+    <p data-i18n="intro" class="mt-6 text-lg text-muted leading-relaxed">
       Bu Gizlilik Politikası, Fits mobil uygulamasını ("Fits", "Uygulama", "Platform", "biz") kullanan tüm kullanıcıların
       ("siz", "kullanıcı") kişisel verilerinin nasıl toplandığını, işlendiğini, saklandığını ve korunduğunu açıklamak
       amacıyla hazırlanmıştır. Uygulamayı indirerek, hesap oluşturarak veya kullanarak bu politikada açıklanan
@@ -92,6 +97,7 @@
                 prose-strong:text-ink prose-strong:font-semibold
                 prose-a:text-ink prose-a:font-semibold prose-a:underline prose-a:decoration-brand prose-a:decoration-2 prose-a:underline-offset-2 hover:prose-a:text-ink/70">
 
+      <div data-i18n="s1">
       <h2 id="veri-sorumlusu">1. Veri Sorumlusu</h2>
       <p>
         İşbu Gizlilik Politikası kapsamında kişisel verileriniz, veri sorumlusu sıfatıyla <strong>Fits</strong> platformu
@@ -102,7 +108,9 @@
       <ul>
         <li>E-posta: <a href="mailto:hello@gotfits.com">hello@gotfits.com</a></li>
       </ul>
+      </div>
 
+      <div data-i18n="s2">
       <h2 id="toplanan-veriler">2. Toplanan Kişisel Veriler</h2>
       <p>Uygulamayı kullanırken aşağıdaki kategorilerde kişisel veriler toplanmaktadır:</p>
 
@@ -128,7 +136,9 @@
         <li>Firebase Cloud Messaging (FCM) push bildirim belirteci</li>
         <li>Uygulama kullanım ve etkileşim verileri (çökme raporları, oturum süresi gibi anonimleştirilmiş analitik veriler)</li>
       </ul>
+      </div>
 
+      <div data-i18n="s3">
       <h2 id="kamera-galeri">3. Kamera ve Fotoğraf Galerisi İzinleri</h2>
       <p>
         Fits, kombin fotoğraflarınızı paylaşabilmeniz için cihazınızın kamera ve/veya fotoğraf galerisine erişim izni
@@ -143,7 +153,9 @@
           normal şekilde çalışmaya devam eder.</li>
         <li>İzni istediğiniz zaman cihazınızın Ayarlar menüsünden geri alabilirsiniz.</li>
       </ul>
+      </div>
 
+      <div data-i18n="s4">
       <h2 id="veri-guvenligi">4. Veri Güvenliği ve Altyapı</h2>
       <p>
         Kişisel verileriniz ve içerikleriniz, Google LLC tarafından işletilen <strong>Firebase</strong> altyapısında
@@ -161,7 +173,9 @@
         Makul teknik ve idari tüm tedbirlere rağmen internet üzerinden hiçbir veri iletiminin veya elektronik
         saklama yönteminin %100 güvenli olamayacağını hatırlatmak isteriz.
       </p>
+      </div>
 
+      <div data-i18n="s5">
       <h2 id="ucuncu-taraf">5. Üçüncü Taraflarla Paylaşım</h2>
       <p>
         Fits, kişisel verilerinizi <strong>hiçbir koşulda</strong> üçüncü taraflara satmaz, kiralamaz veya
@@ -175,7 +189,9 @@
         <li>Platform kurallarının ihlali durumunda dolandırıcılık, kötüye kullanım veya güvenlik tehdidinin
           önlenmesi amacıyla, yalnızca gerekli ölçüde.</li>
       </ul>
+      </div>
 
+      <div data-i18n="s6">
       <h2 id="kullanici-haklari">6. Kullanıcı Hakları ve Hesap Silme</h2>
       <p>
         Kişisel Verilerin Korunması Kanunu ve GDPR kapsamında; verilerinize erişme, düzeltme, işlenmesine itiraz
@@ -193,8 +209,22 @@
           <a href="mailto:hello@gotfits.com">hello@gotfits.com</a> adresine e-posta göndererek de iletebilirsiniz;
           talebiniz makul süre içinde (en geç 30 gün) yerine getirilir.</li>
       </ul>
+      </div>
 
-      <h2 id="yas-siniri">7. Yaş Sınırı</h2>
+      <div data-i18n="s7">
+      <h2 id="icerik-sorumlulugu">7. Kullanıcı İçeriğinin Sorumluluğu</h2>
+      <p>
+        Paylaştığınız fotoğraflar, ürün/marka/fiyat etiketleri ve harici bağlantılar (affiliate linkleri dâhil)
+        sizin tarafınızdan oluşturulan içeriklerdir; bu içeriklerin doğruluğundan, yasallığından ve üçüncü
+        kişilerin haklarını ihlal etmemesinden <strong>yalnızca siz sorumlusunuz</strong>. Fits, bu içerikleri
+        yalnızca sizin talimatınızla platformda barındırır ve görüntüler; paylaştığınız bilginin doğruluğunu
+        araştırma veya doğrulama yükümlülüğü taşımaz. Kullanıcı içeriğine ilişkin sorumluluk, beyan ve tazminat
+        yükümlülükleri hakkında ayrıntılı bilgi için <a href="/terms.html">Kullanım Şartları</a>'na bakınız.
+      </p>
+      </div>
+
+      <div data-i18n="s8">
+      <h2 id="yas-siniri">8. Yaş Sınırı</h2>
       <p>
         Fits, 13 yaşından küçük bireylere (bulunduğunuz ülke mevzuatının daha yüksek bir yaş sınırı öngörmesi
         halinde — örneğin bazı Avrupa Birliği ülkelerinde 16 yaş — bu yaşın altındaki bireylere) yönelik değildir
@@ -203,19 +233,24 @@
         düşünüyorsanız lütfen <a href="mailto:hello@gotfits.com">hello@gotfits.com</a> üzerinden bizimle iletişime
         geçin.
       </p>
+      </div>
 
-      <h2 id="degisiklikler">8. Politikada Yapılacak Değişiklikler</h2>
+      <div data-i18n="s9">
+      <h2 id="degisiklikler">9. Politikada Yapılacak Değişiklikler</h2>
       <p>
         Bu Gizlilik Politikası, yasal düzenlemeler veya uygulama özelliklerindeki değişiklikler doğrultusunda
         güncellenebilir. Önemli değişiklikler uygulama içi bildirim veya e-posta yoluyla duyurulacaktır. Politikanın
         güncel hâli her zaman bu sayfada yayımlanır.
       </p>
+      </div>
 
-      <h2 id="iletisim">9. İletişim</h2>
+      <div data-i18n="s10">
+      <h2 id="iletisim">10. İletişim</h2>
       <p>
         Gizliliğinizle ilgili her türlü soru, talep veya şikâyetiniz için bize
         <a href="mailto:hello@gotfits.com">hello@gotfits.com</a> adresinden ulaşabilirsiniz.
       </p>
+      </div>
 
     </div>
   </div>
@@ -229,21 +264,21 @@
       <div>
         <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
              alt="Fits Logo" class="h-7 w-auto object-contain mb-4 brightness-0 invert">
-        <p class="text-sm text-white/50 max-w-xs leading-relaxed">
+        <p data-i18n="footer.tagline" class="text-sm text-white/50 max-w-xs leading-relaxed">
           Sokak modasına ve tarzına ilham veren, gençlerin kombin paylaştığı topluluk platformu.
         </p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-8 sm:gap-16">
         <div>
-          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
+          <h4 data-i18n="footer.company" class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
-            <li><a href="/terms.html" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
+            <li><a href="/privacy.html" data-i18n="footer.privacy" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
+            <li><a href="/terms.html" data-i18n="footer.terms" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
+          <h4 data-i18n="footer.contact" class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
           <ul class="space-y-3 text-sm">
             <li>
               <a href="mailto:hello@gotfits.com" class="hover:text-brand transition-colors flex items-center gap-2">
@@ -258,7 +293,7 @@
     </div>
 
     <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
+      <p data-i18n="footer.copyright" class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
       <div class="flex items-center gap-5 text-white/50">
         <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-tiktok"></i></a>
@@ -267,6 +302,200 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var STORAGE_KEY = 'fits-lang';
+
+    var t = {
+      'nav.home': `Home`,
+      'badge': `Legal Document`,
+      'h1': `Privacy Policy`,
+      'dates': `Effective Date: August 20, 2026 &middot; Last Updated: August 20, 2026`,
+      'intro': `This Privacy Policy explains how the personal data of everyone ("you", "user") who uses the
+        Fits mobile application ("Fits", "App", "Platform", "we") is collected, processed, stored, and
+        protected. By downloading, registering for, or using the App, you accept the practices described in
+        this policy.`,
+
+      's1': `<h2 id="veri-sorumlusu">1. Data Controller</h2>
+        <p>
+          Under this Privacy Policy, your personal data is processed by the <strong>Fits</strong> platform as
+          data controller, in accordance with applicable personal-data-protection law (including Turkey's Law
+          No. 6698 on the Protection of Personal Data and the EU General Data Protection Regulation — GDPR). For
+          any privacy-related question, request, or application, you can reach us through the channel below:
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:hello@gotfits.com">hello@gotfits.com</a></li>
+        </ul>`,
+
+      's2': `<h2 id="toplanan-veriler">2. Personal Data We Collect</h2>
+        <p>While using the App, the following categories of personal data are collected:</p>
+
+        <h3>2.1. Account Creation Data</h3>
+        <ul>
+          <li>Email address</li>
+          <li>Username and profile information (optional profile photo, bio)</li>
+          <li>Authentication data (encrypted session tokens issued by secure authentication providers, rather
+            than a stored password)</li>
+        </ul>
+
+        <h3>2.2. Content You Upload</h3>
+        <ul>
+          <li>Fit / outfit photos</li>
+          <li>Product brand and price tags attached to content</li>
+          <li>Your votes on other users' content (fire/like, dislike) and comments</li>
+        </ul>
+
+        <h3>2.3. Technical &amp; Device Data</h3>
+        <ul>
+          <li>Device model and hardware information</li>
+          <li>Operating system type and version</li>
+          <li>IP address and approximate location (country/city level)</li>
+          <li>Firebase Cloud Messaging (FCM) push notification token</li>
+          <li>App usage and interaction data (anonymized analytics such as crash reports and session length)</li>
+        </ul>`,
+
+      's3': `<h2 id="kamera-galeri">3. Camera &amp; Photo Library Permissions</h2>
+        <p>
+          Fits requests access to your device's camera and/or photo library so you can share fit photos. This
+          access is triggered <strong>only and exclusively by your explicit consent and direct action</strong>
+          (for example, when you tap "Upload Photo" or "Take Photo").
+        </p>
+        <ul>
+          <li>The App does not scan your library in the background, auto-upload photos, or transmit content
+            from your library to our servers without your knowledge and consent.</li>
+          <li>Camera/library permission is only requested by the system when you actively try to share a fit;
+            if you decline it, every other feature of the App keeps working normally except that specific
+            sharing feature.</li>
+          <li>You can revoke the permission at any time from your device's Settings menu.</li>
+        </ul>`,
+
+      's4': `<h2 id="veri-guvenligi">4. Data Security &amp; Infrastructure</h2>
+        <p>
+          Your personal data and content are hosted on <strong>Firebase</strong> infrastructure (Cloud
+          Firestore, Firebase Storage, Firebase Authentication) operated by Google LLC. This infrastructure is
+          protected by industry-standard security measures:
+        </p>
+        <ul>
+          <li>Encryption of data both in transit (TLS/SSL) and at rest (AES-256) on the servers,</li>
+          <li>Layered access control via Firestore Security Rules and Firebase Authentication,</li>
+          <li>A cloud infrastructure continuously monitored against unauthorized access and holding
+            international security certifications such as ISO/IEC 27001 and SOC 2/3.</li>
+        </ul>
+        <p>
+          Despite all reasonable technical and administrative measures, we want to remind you that no data
+          transmission over the internet or method of electronic storage can be guaranteed to be 100% secure.
+        </p>`,
+
+      's5': `<h2 id="ucuncu-taraf">5. Sharing With Third Parties</h2>
+        <p>
+          Fits <strong>never</strong> sells, rents, or shares your personal data with third parties for
+          marketing or advertising purposes. Your data may only be shared in the following limited
+          circumstances:
+        </p>
+        <ul>
+          <li>With infrastructure providers required for the App to function (Firebase/Google Cloud only — for
+            hosting and push-notification services),</li>
+          <li>To fulfill a legal obligation, court order, or request from an authorized public authority,</li>
+          <li>To the extent strictly necessary to prevent fraud, abuse, or a security threat in case of a
+            violation of Platform rules.</li>
+        </ul>`,
+
+      's6': `<h2 id="kullanici-haklari">6. Your Rights &amp; Account Deletion</h2>
+        <p>
+          Under applicable data-protection law and GDPR, you have the right to access, correct, object to the
+          processing of, request the portability of, and request the deletion of your data. In line with Apple
+          App Store guidelines, you can permanently delete your account and all associated data
+          <strong>from within the App, without being redirected to any external channel</strong>:
+        </p>
+        <ul>
+          <li>You can delete your account instantly and permanently by following
+            <strong>Profile → Settings → Delete Account</strong>.</li>
+          <li>Deleting your account permanently removes every photo you uploaded, your votes/comments, your
+            profile information, and all other personal data associated with your account from our servers.
+            This action cannot be undone.</li>
+          <li>If you are unable to delete your account from within the App, you can send the same request by
+            emailing <a href="mailto:hello@gotfits.com">hello@gotfits.com</a>; your request will be fulfilled
+            within a reasonable time (30 days at the latest).</li>
+        </ul>`,
+
+      's7': `<h2 id="icerik-sorumlulugu">7. Responsibility for User Content</h2>
+        <p>
+          The photos, product/brand/price tags, and external links (including affiliate links) you share are
+          content you create; <strong>you alone are responsible</strong> for their accuracy, their legality,
+          and for making sure they do not infringe any third party's rights. Fits only hosts and displays this
+          content on the Platform as instructed by you, and has no obligation to research or verify the
+          accuracy of information you post. For full details on user-content liability, representations, and
+          indemnification, see the <a href="/terms.html">Terms of Service</a>.
+        </p>`,
+
+      's8': `<h2 id="yas-siniri">8. Age Limit</h2>
+        <p>
+          Fits is not directed at individuals under 13 years old (or under the higher age limit required by
+          your local law — for example 16 in some EU countries), and does not knowingly collect personal data
+          from that age group. Accounts and associated data of users we identify as being under this age limit
+          are deleted immediately. If you believe a child has provided us with personal data, please contact us
+          at <a href="mailto:hello@gotfits.com">hello@gotfits.com</a>.
+        </p>`,
+
+      's9': `<h2 id="degisiklikler">9. Changes to This Policy</h2>
+        <p>
+          This Privacy Policy may be updated to reflect legal changes or changes to the App's features. Material
+          changes will be announced via an in-app notification or email. The current version of this policy is
+          always published on this page.
+        </p>`,
+
+      's10': `<h2 id="iletisim">10. Contact</h2>
+        <p>
+          For any question, request, or complaint about your privacy, you can reach us at
+          <a href="mailto:hello@gotfits.com">hello@gotfits.com</a>.
+        </p>`,
+
+      'footer.tagline': `The community platform that inspires young people through street style — where they
+        share and discover fits.`,
+      'footer.company': `Company`,
+      'footer.privacy': `Privacy Policy`,
+      'footer.terms': `Terms of Service`,
+      'footer.contact': `Contact`,
+      'footer.copyright': `© 2026 Fits. All rights reserved.`
+    };
+
+    var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+    var originalHTML = new WeakMap();
+    i18nEls.forEach(function (el) { originalHTML.set(el, el.innerHTML); });
+
+    function setActiveButton(lang) {
+      document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+        var active = btn.getAttribute('data-lang-btn') === lang;
+        btn.classList.toggle('bg-ink', active);
+        btn.classList.toggle('text-white', active);
+        btn.classList.toggle('text-ink/50', !active);
+      });
+    }
+
+    function applyLang(lang) {
+      i18nEls.forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (lang === 'en' && t[key] !== undefined) {
+          el.innerHTML = t[key];
+        } else {
+          el.innerHTML = originalHTML.get(el);
+        }
+      });
+      document.documentElement.lang = lang;
+      setActiveButton(lang);
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+      btn.addEventListener('click', function () { applyLang(btn.getAttribute('data-lang-btn')); });
+    });
+
+    var stored = 'tr';
+    try { stored = localStorage.getItem(STORAGE_KEY) || 'tr'; } catch (e) {}
+    applyLang(stored);
+  })();
+</script>
 
 </body>
 </html>

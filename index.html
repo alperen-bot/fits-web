@@ -122,6 +122,19 @@
     }
     .fits-liquid { transition: none; }
   }
+
+  /* Tilted phone-showcase gallery */
+  .phone-showcase {
+    transition: transform .4s cubic-bezier(.16,1,.3,1);
+  }
+  .phone-showcase:hover {
+    transform: translateY(-10px) rotate(0deg) !important;
+  }
+
+  /* Language switcher */
+  .lang-btn {
+    transition: background-color .2s ease, color .2s ease;
+  }
 </style>
 </head>
 <body class="font-sans text-ink antialiased overflow-x-hidden">
@@ -133,10 +146,15 @@
       <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
            alt="Fits Logo" class="h-9 w-auto object-contain">
     </a>
-    <nav class="flex items-center gap-8">
-      <a href="#iletisim" class="text-sm font-medium text-ink hover:text-ink/60 transition-colors">
+    <nav class="flex items-center gap-4 sm:gap-8">
+      <a href="#iletisim" data-i18n="nav.contact" class="text-sm font-medium text-ink hover:text-ink/60 transition-colors">
         İletişim
       </a>
+      <!-- Language switcher -->
+      <div class="flex items-center gap-0.5 border border-ink/15 rounded-full p-0.5">
+        <button type="button" data-lang-btn="tr" class="lang-btn px-2.5 py-1 rounded-full text-xs font-semibold">TR</button>
+        <button type="button" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-full text-xs font-semibold">EN</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -153,7 +171,7 @@
     <div class="text-center md:text-left">
       <div class="fade-up inline-flex items-center gap-2 bg-brand/20 border border-brand/40 text-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
         <i class="fa-solid fa-sparkles text-[11px]"></i>
-        Yeni Nesil Moda Deneyimi
+        <span data-i18n="hero.badge">Yeni Nesil Moda Deneyimi</span>
       </div>
 
       <h1 class="fade-up delay-1 text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight text-ink">
@@ -163,7 +181,7 @@
         </span>
       </h1>
 
-      <p class="fade-up delay-2 mt-8 text-lg md:text-xl text-muted max-w-md mx-auto md:mx-0 leading-relaxed">
+      <p data-i18n="hero.desc" class="fade-up delay-2 mt-8 text-lg md:text-xl text-muted max-w-md mx-auto md:mx-0 leading-relaxed">
         Tarzını yansıt, kombinlerini paylaş ve ilham al. Moda dünyan artık cebinde.
       </p>
 
@@ -172,7 +190,7 @@
         <a href="#" class="store-btn flex items-center gap-3 bg-ink text-white px-6 py-3 rounded-2xl min-w-[190px] shadow-soft">
           <i class="fa-brands fa-apple text-3xl"></i>
           <span class="text-left leading-tight">
-            <span class="block text-[11px] text-white/70">İndir</span>
+            <span data-i18n="store.download" class="block text-[11px] text-white/70">İndir</span>
             <span class="block text-lg font-semibold -mt-0.5">App Store</span>
           </span>
         </a>
@@ -214,45 +232,57 @@
 <section class="py-24 md:py-32 bg-white/60">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-      <span class="text-sm font-semibold text-ink/50 uppercase tracking-widest">Özellikler</span>
-      <h2 class="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-ink">Neden Fits?</h2>
-      <p class="mt-5 text-lg text-muted">
+      <span data-i18n="features.badge" class="text-sm font-semibold text-ink/50 uppercase tracking-widest">Özellikler</span>
+      <h2 data-i18n="features.title" class="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-ink">Neden Fits?</h2>
+      <p data-i18n="features.desc" class="mt-5 text-lg text-muted">
         Kombinlerini keşfet, paylaş ve topluluğun beğenisini kazan — hepsi tek uygulamada.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
       <!-- Feature 1 -->
-      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 lg:p-10 text-center md:text-left">
+      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 text-center md:text-left">
         <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6 mx-auto md:mx-0">
           <i class="fa-solid fa-shirt text-ink text-xl"></i>
         </div>
-        <h3 class="text-xl font-semibold text-ink mb-3">Kombinlerini Paylaş</h3>
-        <p class="text-muted leading-relaxed">
+        <h3 data-i18n="feature1.title" class="text-xl font-semibold text-ink mb-3">Kombinlerini Paylaş</h3>
+        <p data-i18n="feature1.desc" class="text-muted leading-relaxed">
           Günlük stilini fotoğrafla, topluluğa sun ve kendi tarzını sergilediğin bir profil oluştur.
         </p>
       </div>
 
       <!-- Feature 2 -->
-      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 lg:p-10 text-center md:text-left">
+      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 text-center md:text-left">
         <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6 mx-auto md:mx-0">
           <i class="fa-solid fa-fire text-ink text-xl"></i>
         </div>
-        <h3 class="text-xl font-semibold text-ink mb-3">Topluluğu Oyla</h3>
-        <p class="text-muted leading-relaxed">
+        <h3 data-i18n="feature2.title" class="text-xl font-semibold text-ink mb-3">Topluluğu Oyla</h3>
+        <p data-i18n="feature2.desc" class="text-muted leading-relaxed">
           Beğendiğin kombinlere ateş ver, tarzını bulamadıklarına dislike bas. Kararı topluluk versin.
         </p>
       </div>
 
       <!-- Feature 3 -->
-      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 lg:p-10 text-center md:text-left">
+      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 text-center md:text-left">
         <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6 mx-auto md:mx-0">
           <i class="fa-solid fa-compass text-ink text-xl"></i>
         </div>
-        <h3 class="text-xl font-semibold text-ink mb-3">Keşfet ve İlham Al</h3>
-        <p class="text-muted leading-relaxed">
+        <h3 data-i18n="feature3.title" class="text-xl font-semibold text-ink mb-3">Keşfet ve İlham Al</h3>
+        <p data-i18n="feature3.desc" class="text-muted leading-relaxed">
           Sokak modasının nabzını tut, akım kombinleri keşfet ve kendi stilin için ilham topla.
+        </p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-card bg-bg border border-ink/10 rounded-3xl p-8 text-center md:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6 mx-auto md:mx-0">
+          <i class="fa-solid fa-link text-ink text-xl"></i>
+        </div>
+        <h3 data-i18n="feature4.title" class="text-xl font-semibold text-ink mb-3">Ürün &amp; Affiliate Linki Ekle</h3>
+        <p data-i18n="feature4.desc" class="text-muted leading-relaxed">
+          Kombinindeki parçaları etiketle; marka, fiyat ve satın alma (affiliate) linkini paylaşımına ekle.
+          Takipçilerin beğendiği parçaya tek dokunuşla ulaşsın.
         </p>
       </div>
 
@@ -260,23 +290,78 @@
   </div>
 </section>
 
+<!-- ================= APP SHOWCASE (çoklu telefon galerisi) ================= -->
+<section class="relative py-24 md:py-32 overflow-hidden">
+  <div class="blob absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-50"></div>
+
+  <div class="relative max-w-2xl mx-auto px-6 lg:px-10 text-center mb-16 md:mb-24">
+    <span data-i18n="showcase.badge" class="text-sm font-semibold text-ink/50 uppercase tracking-widest">Uygulamadan</span>
+    <h2 data-i18n="showcase.title" class="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-ink">Gerçek Kombinler, Gerçek Stil</h2>
+    <p data-i18n="showcase.desc" class="mt-5 text-lg text-muted">
+      Topluluğumuzun paylaştığı kombinlerden birkaç kare. Kendi tarzını sen de ekle.
+    </p>
+  </div>
+
+  <!-- Not: bu üç ekran görüntüsü geçici placeholder — asset'ler gelince
+       phone-screenshot-2 / -3 / -4 id'li img'lerin src'sini değiştirmen yeterli. -->
+  <div class="relative max-w-5xl mx-auto px-6 flex flex-wrap items-end justify-center gap-x-3 sm:gap-x-6 gap-y-10">
+
+    <!-- Phone: sol, hafif sola eğik -->
+    <div class="phone-showcase -rotate-6 translate-y-6 sm:translate-y-10 z-10">
+      <div class="relative w-[160px] h-[337px] sm:w-[195px] sm:h-[411px] bg-ink rounded-[2.1rem] p-2.5 shadow-phone">
+        <div class="w-full h-full bg-bg rounded-[1.6rem] overflow-hidden relative">
+          <img id="phone-screenshot-2" src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2FIMG_4795.png?alt=media&token=384eeaab-770d-4750-b14b-d1bf662a43f3"
+               alt="Fits kombin akışı" class="w-full h-full object-cover object-top">
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-3.5 sm:w-16 sm:h-4 bg-ink rounded-full"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone: orta, büyük, düz -->
+    <div class="phone-showcase z-20">
+      <div class="relative w-[195px] h-[411px] sm:w-[235px] sm:h-[495px] bg-ink rounded-[2.5rem] p-3 shadow-phone">
+        <div class="w-full h-full bg-bg rounded-[2rem] overflow-hidden relative">
+          <img id="phone-screenshot-3" src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2FIMG_4795.png?alt=media&token=384eeaab-770d-4750-b14b-d1bf662a43f3"
+               alt="Fits profil ekranı" class="w-full h-full object-cover object-top">
+          <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-20 h-5 sm:w-24 sm:h-6 bg-ink rounded-full flex items-center justify-end pr-1.5">
+            <span class="w-1 h-1 rounded-full bg-white/15"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone: sağ, hafif sağa eğik -->
+    <div class="phone-showcase rotate-6 translate-y-6 sm:translate-y-10 z-10">
+      <div class="relative w-[160px] h-[337px] sm:w-[195px] sm:h-[411px] bg-ink rounded-[2.1rem] p-2.5 shadow-phone">
+        <div class="w-full h-full bg-bg rounded-[1.6rem] overflow-hidden relative">
+          <img id="phone-screenshot-4" src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2FIMG_4795.png?alt=media&token=384eeaab-770d-4750-b14b-d1bf662a43f3"
+               alt="Fits keşfet ekranı" class="w-full h-full object-cover object-top">
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-3.5 sm:w-16 sm:h-4 bg-ink rounded-full"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ================= CTA STRIP ================= -->
 <section class="py-20 md:py-28">
   <div class="max-w-5xl mx-auto px-6 lg:px-10 text-center">
-    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-ink leading-tight">
+    <h2 data-i18n="cta.title" class="text-3xl md:text-5xl font-bold tracking-tight text-ink leading-tight">
       Tarzını göstermeye hazır mısın?
     </h2>
-    <p class="mt-5 text-lg text-muted max-w-xl mx-auto">
+    <p data-i18n="cta.desc" class="mt-5 text-lg text-muted max-w-xl mx-auto">
       Fits'i hemen indir, kombinini paylaş ve moda dünyasının bir parçası ol.
     </p>
     <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="#" class="store-btn flex items-center gap-3 bg-ink text-white px-6 py-3 rounded-2xl min-w-[190px] shadow-soft">
         <i class="fa-brands fa-apple text-3xl"></i>
         <span class="text-left leading-tight">
-          <span class="block text-[11px] text-white/70">İndir</span>
+          <span data-i18n="store.download" class="block text-[11px] text-white/70">İndir</span>
           <span class="block text-lg font-semibold -mt-0.5">App Store</span>
         </span>
       </a>
+      <!-- Google Play butonu şimdilik gizli. Yayına hazır olduğunda aşağıdaki yorumu kaldır.
       <a href="#" class="store-btn flex items-center gap-3 bg-ink text-white px-6 py-3 rounded-2xl min-w-[190px] shadow-soft">
         <i class="fa-brands fa-google-play text-2xl"></i>
         <span class="text-left leading-tight">
@@ -284,6 +369,7 @@
           <span class="block text-lg font-semibold -mt-0.5">Google Play</span>
         </span>
       </a>
+      -->
     </div>
   </div>
 </section>
@@ -296,21 +382,21 @@
       <div>
         <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
              alt="Fits Logo" class="h-7 w-auto object-contain mb-4 brightness-0 invert">
-        <p class="text-sm text-white/50 max-w-xs leading-relaxed">
+        <p data-i18n="footer.tagline" class="text-sm text-white/50 max-w-xs leading-relaxed">
           Sokak modasına ve tarzına ilham veren, gençlerin kombin paylaştığı topluluk platformu.
         </p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-8 sm:gap-16">
         <div>
-          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
+          <h4 data-i18n="footer.company" class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
-            <li><a href="/terms.html" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
+            <li><a href="/privacy.html" data-i18n="footer.privacy" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
+            <li><a href="/terms.html" data-i18n="footer.terms" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
+          <h4 data-i18n="nav.contact" class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
           <ul class="space-y-3 text-sm">
             <li>
               <a href="mailto:hello@gotfits.com" class="hover:text-brand transition-colors flex items-center gap-2">
@@ -325,7 +411,7 @@
     </div>
 
     <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
+      <p data-i18n="footer.copyright" class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
       <div class="flex items-center gap-5 text-white/50">
         <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-tiktok"></i></a>
@@ -348,7 +434,12 @@
 
     function update() {
       var progress = Math.max(0, Math.min(1, window.scrollY / FILL_RANGE));
-      var pct = (progress * 100).toFixed(1) + '%';
+      // Pacifico's swash tails hang below the letter bodies, so a linear fill
+      // spends its first ~20% painting only those disconnected tails instead
+      // of the actual letters. Easing with sqrt front-loads the rise so the
+      // fill visibly starts climbing through the letters themselves right away.
+      var eased = Math.sqrt(progress);
+      var pct = (eased * 100).toFixed(1) + '%';
       liquidEls.forEach(function (el) {
         el.style.setProperty('--liquid-fill', pct);
       });
@@ -364,6 +455,81 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     update();
+  })();
+</script>
+
+<script>
+  // Basit TR/EN dil değiştirici — tercih localStorage'da saklanır ve
+  // privacy.html / terms.html sayfalarında da aynı anahtarla okunur.
+  (function () {
+    var STORAGE_KEY = 'fits-lang';
+
+    var translations = {
+      en: {
+        'nav.contact': 'Contact',
+        'hero.badge': 'Next-Gen Fashion Experience',
+        'hero.desc': 'Reflect your style, share your fits, and get inspired. Your fashion world is now in your pocket.',
+        'store.download': 'Download',
+        'features.badge': 'Features',
+        'features.title': 'Why Fits?',
+        'features.desc': 'Discover your fits, share them, and win the community over — all in one app.',
+        'feature1.title': 'Share Your Fits',
+        'feature1.desc': 'Photograph your everyday style, show it to the community, and build a profile that shows off your taste.',
+        'feature2.title': 'Vote With the Community',
+        'feature2.desc': 'Fire up the fits you love, dislike the ones that miss the mark. Let the community decide.',
+        'feature3.title': 'Discover & Get Inspired',
+        'feature3.desc': 'Keep your finger on the pulse of street style, discover trending fits, and gather inspiration for your own look.',
+        'feature4.title': 'Add Product &amp; Affiliate Links',
+        'feature4.desc': 'Tag the pieces in your fit; add the brand, price, and purchase (affiliate) link to your post. Let your followers reach what they love in one tap.',
+        'showcase.badge': 'From the App',
+        'showcase.title': 'Real Fits, Real Style',
+        'showcase.desc': 'A few snapshots shared by our community. Add your own style too.',
+        'cta.title': 'Ready to show your style?',
+        'cta.desc': 'Download Fits now, share your fit, and become part of the fashion world.',
+        'footer.tagline': 'The community platform that inspires young people through street style — where they share and discover fits.',
+        'footer.company': 'Company',
+        'footer.privacy': 'Privacy Policy',
+        'footer.terms': 'Terms of Service',
+        'footer.copyright': '© 2026 Fits. All rights reserved.'
+      }
+    };
+
+    var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+    var originalHTML = new WeakMap();
+    i18nEls.forEach(function (el) { originalHTML.set(el, el.innerHTML); });
+
+    function setActiveButton(lang) {
+      document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+        var active = btn.getAttribute('data-lang-btn') === lang;
+        btn.classList.toggle('bg-ink', active);
+        btn.classList.toggle('text-white', active);
+        btn.classList.toggle('text-ink/50', !active);
+      });
+    }
+
+    function applyLang(lang) {
+      i18nEls.forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (lang === 'en' && translations.en[key] !== undefined) {
+          el.innerHTML = translations.en[key];
+        } else {
+          el.innerHTML = originalHTML.get(el);
+        }
+      });
+      document.documentElement.lang = lang;
+      setActiveButton(lang);
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        applyLang(btn.getAttribute('data-lang-btn'));
+      });
+    });
+
+    var stored = 'tr';
+    try { stored = localStorage.getItem(STORAGE_KEY) || 'tr'; } catch (e) {}
+    applyLang(stored);
   })();
 </script>
 

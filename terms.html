@@ -42,6 +42,7 @@
 <style>
   html { scroll-behavior: smooth; }
   body { background-color: #FDFBF7; }
+  .lang-btn { transition: background-color .2s ease, color .2s ease; }
 </style>
 </head>
 <body class="font-sans text-ink antialiased">
@@ -53,11 +54,15 @@
       <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
            alt="Fits Logo" class="h-9 w-auto object-contain">
     </a>
-    <nav class="flex items-center gap-8">
+    <nav class="flex items-center gap-4 sm:gap-8">
       <a href="/index.html" class="text-sm font-medium text-ink hover:text-ink/60 transition-colors flex items-center gap-2">
         <i class="fa-solid fa-arrow-left text-xs"></i>
-        Ana Sayfa
+        <span data-i18n="nav.home">Ana Sayfa</span>
       </a>
+      <div class="flex items-center gap-0.5 border border-ink/15 rounded-full p-0.5">
+        <button type="button" data-lang-btn="tr" class="lang-btn px-2.5 py-1 rounded-full text-xs font-semibold">TR</button>
+        <button type="button" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-full text-xs font-semibold">EN</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -67,11 +72,11 @@
   <div class="max-w-3xl mx-auto px-6 lg:px-10">
     <span class="inline-flex items-center gap-2 bg-brand/20 border border-brand/40 text-ink text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
       <i class="fa-solid fa-file-contract text-[11px]"></i>
-      Yasal Belge
+      <span data-i18n="badge">Yasal Belge</span>
     </span>
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-ink">Kullanım Şartları</h1>
-    <p class="mt-4 text-muted">Yürürlük Tarihi: 20 Ağustos 2026 &middot; Son Güncelleme: 20 Ağustos 2026</p>
-    <p class="mt-6 text-lg text-muted leading-relaxed">
+    <h1 data-i18n="h1" class="text-4xl md:text-5xl font-extrabold tracking-tight text-ink">Kullanım Şartları</h1>
+    <p data-i18n="dates" class="mt-4 text-muted">Yürürlük Tarihi: 20 Ağustos 2026 &middot; Son Güncelleme: 20 Ağustos 2026</p>
+    <p data-i18n="intro" class="mt-6 text-lg text-muted leading-relaxed">
       Bu Kullanım Şartları ve Son Kullanıcı Lisans Sözleşmesi ("Sözleşme"), Fits mobil uygulamasını ("Fits",
       "Uygulama", "Platform", "biz") indiren, hesap oluşturan veya kullanan her birey ("siz", "kullanıcı") ile
       Fits arasındaki hak ve yükümlülükleri düzenler. Uygulamayı kullanarak bu Sözleşme'nin tüm hükümlerini kabul
@@ -92,14 +97,45 @@
                 prose-strong:text-ink prose-strong:font-semibold
                 prose-a:text-ink prose-a:font-semibold prose-a:underline prose-a:decoration-brand prose-a:decoration-2 prose-a:underline-offset-2 hover:prose-a:text-ink/70">
 
+      <div data-i18n="s1">
       <h2 id="hesap">1. Hesap Oluşturma ve Uygunluk</h2>
       <p>
         Fits'i kullanabilmek için 13 yaşından büyük olmanız (yerel mevzuatınızın daha yüksek bir asgari yaş
         öngörmesi hâlinde o yaşın üzerinde olmanız) ve doğru, güncel bilgilerle bir hesap oluşturmanız gerekir.
         Hesabınızın güvenliğinden ve hesabınız üzerinden gerçekleştirilen tüm faaliyetlerden siz sorumlusunuz.
       </p>
+      </div>
 
-      <h2 id="sifir-tolerans">2. Sıfır Tolerans Politikası (Objectionable Content)</h2>
+      <div data-i18n="s2">
+      <h2 id="kullanici-sorumlulugu">2. Kullanıcı Sorumluluğu ve İçerik Beyanı</h2>
+      <p>
+        Platformda paylaştığınız her türlü içerikten — fotoğraflar, kombin görselleri, yorumlar, marka/fiyat
+        etiketleri, harici bağlantılar (link) ve affiliate linkleri dâhil — <strong>yalnızca siz sorumlusunuz</strong>.
+        İçerik paylaşarak aşağıdakileri kabul, beyan ve taahhüt edersiniz:
+      </p>
+      <ul>
+        <li>Paylaştığınız fotoğraf ve görsellerin üzerinde yasal kullanım hakkına sahip olduğunuzu; üçüncü
+          kişilerin telif hakkı, marka hakkı, kişilik hakkı veya gizlilik hakkını ihlal etmediğini,</li>
+        <li>Bir gönderiye eklediğiniz harici bağlantıların (link) güvenli, yasal ve içerik olarak doğru
+          olduğunu; kötü amaçlı yazılım, kimlik avı (phishing), dolandırıcılık veya yanıltıcı/aldatıcı içerik
+          barındırmadığını,</li>
+        <li>Paylaştığınız ürün, marka ve fiyat etiketlerinin doğruluğundan bizzat sorumlu olduğunuzu; Fits'in bu
+          bilgilerin doğruluğunu araştırma veya doğrulama yükümlülüğü bulunmadığını,</li>
+        <li>Ticari/affiliate link paylaşırken bu Sözleşme'nin <strong>"Ticari İşbirlikleri ve Etiketleme
+          Yükümlülüğü"</strong> bölümünde belirtilen etiketleme kuralına uyacağınızı.</li>
+      </ul>
+      <p>
+        Fits, platformdaki her içeriği önceden incelemez; içerik denetimi büyük ölçüde şikâyet mekanizması ve
+        örnekleme yoluyla yapılan denetimlere dayanır. Bu nedenle, sizin veya başka bir kullanıcının paylaştığı
+        içerikten — bir bağlantının yönlendirdiği harici web sitesi dâhil — doğabilecek zarar, kayıp veya
+        anlaşmazlıklardan Fits sorumlu tutulamaz. Paylaştığınız içerik nedeniyle üçüncü bir kişi veya kurum
+        tarafından Fits'e yöneltilen her türlü talep, dava veya yaptırımda, yürürlükteki mevzuatın izin verdiği
+        ölçüde, Fits'i tazmin etmeyi ve Fits'in bu nedenle uğrayacağı zararları karşılamayı kabul edersiniz.
+      </p>
+      </div>
+
+      <div data-i18n="s3">
+      <h2 id="sifir-tolerans">3. Sıfır Tolerans Politikası (Objectionable Content)</h2>
       <p>
         Fits, güvenli ve saygılı bir topluluk ortamını korumayı taahhüt eder. Aşağıdaki içerik ve davranış
         türlerine karşı <strong>kesinlikle sıfır tolerans</strong> uygulanır ve bu tür içerikler/kullanıcılar
@@ -119,8 +155,10 @@
         Bu kurallardan herhangi birinin ihlal edilmesi, ilgili içeriğin kaldırılmasının yanı sıra hesabın
         askıya alınması veya kalıcı olarak kapatılması ile sonuçlanabilir.
       </p>
+      </div>
 
-      <h2 id="moderasyon">3. İçerik Moderasyonu ve Şikâyet Mekanizması</h2>
+      <div data-i18n="s4">
+      <h2 id="moderasyon">4. İçerik Moderasyonu ve Şikâyet Mekanizması</h2>
       <p>
         Fits, kullanıcı tarafından oluşturulan içeriklerin (UGC) platform kurallarına uygunluğunu sağlamak için
         etkin bir moderasyon sistemi işletir:
@@ -138,8 +176,10 @@
           ve/veya insan moderatörler tarafından yapılan periyodik denetimlerle platform genelinde uygunsuz
           içerikler tespit edilmeye çalışılır.</li>
       </ul>
+      </div>
 
-      <h2 id="engelleme">4. Engelleme (Block) Özelliği</h2>
+      <div data-i18n="s5">
+      <h2 id="engelleme">5. Engelleme (Block) Özelliği</h2>
       <p>
         Her kullanıcı, kendisini taciz eden, rahatsız eden veya içeriklerini görmek istemediği herhangi bir
         hesabı, ilgili profil sayfasındaki "Engelle" (Block) butonu ile <strong>anında</strong> engelleyebilir.
@@ -151,8 +191,10 @@
         <li>Engellenen kullanıcı sizinle etkileşime geçemez (yorum, oylama, mesaj vb.).</li>
       </ul>
       <p>Engelleme işlemini dilediğiniz zaman geri alabilirsiniz.</p>
+      </div>
 
-      <h2 id="ticari-isbirlikleri">5. Ticari İşbirlikleri ve Etiketleme Yükümlülüğü</h2>
+      <div data-i18n="s6">
+      <h2 id="ticari-isbirlikleri">6. Ticari İşbirlikleri ve Etiketleme Yükümlülüğü</h2>
       <p>
         Bir gönderide komisyonlu bağlantı (affiliate link), sponsorlu içerik veya herhangi bir marka ile ticari
         iş birliği paylaşan kullanıcılar, ilgili içeriği platform içinde sunulan
@@ -168,8 +210,10 @@
         <li>Etiketlenmemiş ticari içeriklerden doğabilecek her türlü yasal sorumluluk, içeriği paylaşan
           kullanıcıya aittir; Fits bu konuda kullanıcıya karşı herhangi bir sorumluluk kabul etmez.</li>
       </ul>
+      </div>
 
-      <h2 id="fikri-mulkiyet">6. Fikri Mülkiyet ve İçerik Lisansı</h2>
+      <div data-i18n="s7">
+      <h2 id="fikri-mulkiyet">7. Fikri Mülkiyet ve İçerik Lisansı</h2>
       <ul>
         <li><strong>Mülkiyet sizde kalır:</strong> Uygulamaya yüklediğiniz fotoğraf, metin ve diğer tüm
           içeriklerin (kombin görselleri dâhil) fikri mülkiyet hakları size aittir. Fits, içeriğinizin
@@ -184,35 +228,44 @@
         <li><strong>Platformun mülkiyeti:</strong> Fits'in kendi markası, logosu, arayüz tasarımı, yazılımı ve
           diğer tüm materyalleri Fits'in fikri mülkiyetindedir ve izinsiz kullanılamaz.</li>
       </ul>
+      </div>
 
-      <h2 id="fesih">7. Hesabın Askıya Alınması ve Sonlandırılması</h2>
+      <div data-i18n="s8">
+      <h2 id="fesih">8. Hesabın Askıya Alınması ve Sonlandırılması</h2>
       <p>
         Fits, bu Sözleşme'yi veya Sıfır Tolerans Politikası'nı ihlal ettiği tespit edilen hesapları, önceden
         bildirimde bulunmaksızın geçici olarak askıya alma veya kalıcı olarak sonlandırma hakkını saklı tutar.
         Kullanıcılar, dilediği zaman <a href="/privacy.html">Gizlilik Politikası</a>'nda açıklanan Profil → Ayarlar
         → Hesabı Sil adımlarını izleyerek kendi hesaplarını kalıcı olarak silebilir.
       </p>
+      </div>
 
-      <h2 id="sorumluluk-sinirlamasi">8. Sorumluluğun Sınırlandırılması</h2>
+      <div data-i18n="s9">
+      <h2 id="sorumluluk-sinirlamasi">9. Sorumluluğun Sınırlandırılması</h2>
       <p>
         Uygulama "olduğu gibi" (as is) sunulmaktadır. Fits, kullanıcılar tarafından oluşturulan içeriklerin
         doğruluğunu, güvenilirliğini veya kalitesini garanti etmez. Fits, kesintisiz veya hatasız bir hizmet
         garanti etmez ve yürürlükteki mevzuatın izin verdiği azami ölçüde, uygulamanın kullanımından doğabilecek
         dolaylı zararlardan sorumlu tutulamaz.
       </p>
+      </div>
 
-      <h2 id="degisiklikler">9. Sözleşmede Yapılacak Değişiklikler</h2>
+      <div data-i18n="s10">
+      <h2 id="degisiklikler">10. Sözleşmede Yapılacak Değişiklikler</h2>
       <p>
         Fits, bu Kullanım Şartları'nı zaman zaman güncelleyebilir. Önemli değişiklikler uygulama içi bildirim
         veya e-posta yoluyla duyurulur. Değişikliklerden sonra Uygulama'yı kullanmaya devam etmeniz, güncellenen
         şartları kabul ettiğiniz anlamına gelir.
       </p>
+      </div>
 
-      <h2 id="iletisim">10. İletişim</h2>
+      <div data-i18n="s11">
+      <h2 id="iletisim">11. İletişim</h2>
       <p>
         Bu Sözleşme ile ilgili sorularınız için bize <a href="mailto:hello@gotfits.com">hello@gotfits.com</a>
         adresinden ulaşabilirsiniz.
       </p>
+      </div>
 
     </div>
   </div>
@@ -226,21 +279,21 @@
       <div>
         <img src="https://firebasestorage.googleapis.com/v0/b/fits-c8e3f.firebasestorage.app/o/assets%2Ffits.png?alt=media&token=34d59086-bc12-44ee-8571-d3b1cf498a86"
              alt="Fits Logo" class="h-7 w-auto object-contain mb-4 brightness-0 invert">
-        <p class="text-sm text-white/50 max-w-xs leading-relaxed">
+        <p data-i18n="footer.tagline" class="text-sm text-white/50 max-w-xs leading-relaxed">
           Sokak modasına ve tarzına ilham veren, gençlerin kombin paylaştığı topluluk platformu.
         </p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-8 sm:gap-16">
         <div>
-          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
+          <h4 data-i18n="footer.company" class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">Kurumsal</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/privacy.html" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
-            <li><a href="/terms.html" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
+            <li><a href="/privacy.html" data-i18n="footer.privacy" class="hover:text-brand transition-colors">Gizlilik Politikası</a></li>
+            <li><a href="/terms.html" data-i18n="footer.terms" class="hover:text-brand transition-colors">Kullanım Şartları</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
+          <h4 data-i18n="footer.contact" class="text-white text-sm font-semibold mb-4 uppercase tracking-wide">İletişim</h4>
           <ul class="space-y-3 text-sm">
             <li>
               <a href="mailto:hello@gotfits.com" class="hover:text-brand transition-colors flex items-center gap-2">
@@ -255,7 +308,7 @@
     </div>
 
     <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
+      <p data-i18n="footer.copyright" class="text-xs text-white/40">© 2026 Fits. Tüm hakları saklıdır.</p>
       <div class="flex items-center gap-5 text-white/50">
         <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" class="hover:text-brand transition-colors"><i class="fa-brands fa-tiktok"></i></a>
@@ -264,6 +317,211 @@
     </div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var STORAGE_KEY = 'fits-lang';
+
+    var t = {
+      'nav.home': `Home`,
+      'badge': `Legal Document`,
+      'h1': `Terms of Service`,
+      'dates': `Effective Date: August 20, 2026 &middot; Last Updated: August 20, 2026`,
+      'intro': `This Terms of Service and End User License Agreement ("Agreement") governs the rights and
+        obligations between Fits and any individual ("you", "user") who downloads, creates an account for, or
+        uses the Fits mobile application ("Fits", "App", "Platform", "we"). By using the App you accept every
+        provision of this Agreement in full. If you do not accept it, you must not use the App and should
+        delete your account.`,
+
+      's1': `<h2 id="hesap">1. Account Creation &amp; Eligibility</h2>
+        <p>
+          To use Fits you must be over 13 years old (or the higher minimum age required by your local law) and
+          create an account with accurate, up-to-date information. You are responsible for the security of your
+          account and for all activity carried out through it.
+        </p>`,
+
+      's2': `<h2 id="kullanici-sorumlulugu">2. User Responsibility &amp; Content Representations</h2>
+        <p>
+          <strong>You are solely responsible</strong> for everything you post on the Platform — photos, fit
+          images, comments, brand/price tags, external links, and affiliate links included. By posting content
+          you represent, warrant, and agree that:
+        </p>
+        <ul>
+          <li>You hold the legal right to use any photo or image you share, and it does not infringe any third
+            party's copyright, trademark, personality, or privacy rights,</li>
+          <li>Any external link you attach to a post is safe, lawful, and accurately described; it does not
+            contain malware, phishing attempts, fraud, or misleading/deceptive content,</li>
+          <li>You are personally responsible for the accuracy of any product, brand, and price tag you post;
+            Fits has no obligation to research or verify this information,</li>
+          <li>When sharing a commercial/affiliate link you will follow the tagging rule set out in the
+            <strong>"Commercial Partnerships &amp; Tagging Obligation"</strong> section of this Agreement.</li>
+        </ul>
+        <p>
+          Fits does not pre-screen every piece of content on the Platform; moderation relies substantially on
+          the report mechanism and on sampled reviews. Fits therefore cannot be held liable for any harm, loss,
+          or dispute arising from content posted by you or another user — including any external website a link
+          leads to. To the extent permitted by applicable law, you agree to indemnify Fits and cover any losses
+          Fits incurs in connection with any claim, lawsuit, or penalty brought against Fits by a third party as
+          a result of content you posted.
+        </p>`,
+
+      's3': `<h2 id="sifir-tolerans">3. Zero-Tolerance Policy (Objectionable Content)</h2>
+        <p>
+          Fits is committed to keeping the community safe and respectful. The following types of content and
+          behavior are subject to <strong>absolute zero tolerance</strong> and are removed/blocked as soon as
+          they are identified:
+        </p>
+        <ul>
+          <li>Harassment, bullying, threats, or targeted abuse,</li>
+          <li>Hate speech; discriminatory content based on race, ethnicity, religion, gender, sexual
+            orientation, disability, or similar characteristics,</li>
+          <li>Obscene, pornographic, or sexual images and text,</li>
+          <li>Violent content that incites or glorifies physical harm to people,</li>
+          <li>Content that infringes copyright, trademark, or other intellectual property rights,</li>
+          <li>Illegal sale of goods/services, fraud, fake-account creation, or spam activity,</li>
+          <li>Misleading, fake, or knowingly false information.</li>
+        </ul>
+        <p>
+          Violating any of these rules may result in removal of the content in question, in addition to
+          suspension or permanent closure of the account.
+        </p>`,
+
+      's4': `<h2 id="moderasyon">4. Content Moderation &amp; Reporting Mechanism</h2>
+        <p>
+          Fits runs an active moderation system to keep user-generated content (UGC) compliant with Platform
+          rules:
+        </p>
+        <ul>
+          <li><strong>Instant reporting:</strong> users can report any content or account they find
+            inappropriate at any time, directly from the App, via the "Report" button on the content/profile.</li>
+          <li><strong>Review time:</strong> the Fits moderation team reviews every report within
+            <strong>24 hours</strong> at the latest.</li>
+          <li><strong>Action:</strong> if the review finds a violation of this Agreement or the Zero-Tolerance
+            Policy, the content is removed immediately and the account that posted it is warned, temporarily
+            suspended, or permanently blocked/terminated depending on the severity of the violation.</li>
+          <li><strong>Proactive review:</strong> in addition to the reporting mechanism, automated content
+            scanning tools and/or human moderators carry out periodic reviews across the Platform to catch
+            inappropriate content.</li>
+        </ul>`,
+
+      's5': `<h2 id="engelleme">5. Blocking</h2>
+        <p>
+          Any user can <strong>instantly</strong> block an account that harasses them, bothers them, or whose
+          content they do not wish to see, via the "Block" button on that account's profile. Once you block an
+          account:
+        </p>
+        <ul>
+          <li>The blocked user can no longer see your profile, fits, or content,</li>
+          <li>The blocked user's content no longer appears in your feed,</li>
+          <li>The blocked user can no longer interact with you (comments, votes, messages, etc.).</li>
+        </ul>
+        <p>You can undo a block at any time.</p>`,
+
+      's6': `<h2 id="ticari-isbirlikleri">6. Commercial Partnerships &amp; Tagging Obligation</h2>
+        <p>
+          Users who share a commissioned link (affiliate link), sponsored content, or any commercial partnership
+          with a brand in a post are required to clearly mark that content with the
+          <strong>"Partnership" (Sponsored/Affiliate)</strong> tag provided on the Platform. This obligation:
+        </p>
+        <ul>
+          <li>Is a legal requirement introduced to comply with applicable advertising and consumer-protection
+            law (including the regulations of the relevant countries' advertising self-regulation and
+            consumer-protection authorities),</li>
+          <li>Constitutes a binding contractual obligation between Fits and the user; failing to apply the
+            tagging obligation may result in removal of the content and/or restriction of the account,</li>
+          <li>Places any legal liability arising from untagged commercial content on the user who posted it;
+            Fits accepts no liability toward the user in this regard.</li>
+        </ul>`,
+
+      's7': `<h2 id="fikri-mulkiyet">7. Intellectual Property &amp; Content License</h2>
+        <ul>
+          <li><strong>You keep ownership:</strong> you retain the intellectual property rights to any photo,
+            text, or other content you upload to the App (including fit images). Fits never claims ownership of
+            your content.</li>
+          <li><strong>The license you grant us:</strong> by uploading content, you grant Fits a worldwide,
+            royalty-free, non-sublicensable, non-exclusive license to host, display, format, and present that
+            content to other users <strong>solely within the Platform</strong>. This license ends when you
+            delete your account or the content in question.</li>
+          <li><strong>Third-party rights:</strong> you represent and warrant that the content you upload does
+            not infringe any other person's or entity's copyright, trademark, or personality rights.</li>
+          <li><strong>Platform ownership:</strong> Fits's own brand, logo, interface design, software, and all
+            other materials are the intellectual property of Fits and may not be used without permission.</li>
+        </ul>`,
+
+      's8': `<h2 id="fesih">8. Suspension &amp; Termination of Accounts</h2>
+        <p>
+          Fits reserves the right to temporarily suspend or permanently terminate, without prior notice, any
+          account found to have violated this Agreement or the Zero-Tolerance Policy. Users may permanently
+          delete their own account at any time by following the Profile → Settings → Delete Account steps
+          described in the <a href="/privacy.html">Privacy Policy</a>.
+        </p>`,
+
+      's9': `<h2 id="sorumluluk-sinirlamasi">9. Limitation of Liability</h2>
+        <p>
+          The App is provided "as is." Fits does not guarantee the accuracy, reliability, or quality of content
+          created by users. Fits does not guarantee uninterrupted or error-free service and, to the maximum
+          extent permitted by applicable law, cannot be held liable for indirect damages arising from use of
+          the App.
+        </p>`,
+
+      's10': `<h2 id="degisiklikler">10. Changes to This Agreement</h2>
+        <p>
+          Fits may update these Terms of Service from time to time. Material changes will be announced via an
+          in-app notification or email. Continuing to use the App after changes take effect means you accept
+          the updated terms.
+        </p>`,
+
+      's11': `<h2 id="iletisim">11. Contact</h2>
+        <p>
+          For any questions about this Agreement, you can reach us at
+          <a href="mailto:hello@gotfits.com">hello@gotfits.com</a>.
+        </p>`,
+
+      'footer.tagline': `The community platform that inspires young people through street style — where they
+        share and discover fits.`,
+      'footer.company': `Company`,
+      'footer.privacy': `Privacy Policy`,
+      'footer.terms': `Terms of Service`,
+      'footer.contact': `Contact`,
+      'footer.copyright': `© 2026 Fits. All rights reserved.`
+    };
+
+    var i18nEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+    var originalHTML = new WeakMap();
+    i18nEls.forEach(function (el) { originalHTML.set(el, el.innerHTML); });
+
+    function setActiveButton(lang) {
+      document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+        var active = btn.getAttribute('data-lang-btn') === lang;
+        btn.classList.toggle('bg-ink', active);
+        btn.classList.toggle('text-white', active);
+        btn.classList.toggle('text-ink/50', !active);
+      });
+    }
+
+    function applyLang(lang) {
+      i18nEls.forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (lang === 'en' && t[key] !== undefined) {
+          el.innerHTML = t[key];
+        } else {
+          el.innerHTML = originalHTML.get(el);
+        }
+      });
+      document.documentElement.lang = lang;
+      setActiveButton(lang);
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+      btn.addEventListener('click', function () { applyLang(btn.getAttribute('data-lang-btn')); });
+    });
+
+    var stored = 'tr';
+    try { stored = localStorage.getItem(STORAGE_KEY) || 'tr'; } catch (e) {}
+    applyLang(stored);
+  })();
+</script>
 
 </body>
 </html>
